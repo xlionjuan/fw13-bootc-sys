@@ -19,7 +19,7 @@ echo "Creating multiple symlinks that didn't created in the image yet"
 mkdir -p "/var/opt" && ln -s "/var/opt"  "/opt"
 #mkdir -p "/var/usrlocal" && ln -s "/var/usrlocal" "/usr/local"
 
-dnf5 reinstall -y dnf
+dnf5 reinstall -y dnf5
 
 # Remove tuned-ppd to prevent GNOME touching tuned
 # https://github.com/ublue-os/bluefin/issues/1824#issuecomment-2436177630
