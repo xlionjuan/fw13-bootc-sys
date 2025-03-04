@@ -61,7 +61,8 @@ systemctl mask chronyd
 systemctl enable ntpd-rs
 
 # CachyOS Kernel
-dnf5 -y remove kernel kernel-headers kernel-core kernel-modules kernel-modules-core kernel-modules-extra zram-generator-defaults
+#dnf5 -y remove kernel kernel-headers kernel-core kernel-modules kernel-modules-core kernel-modules-extra zram-generator-defaults
+rpm-ostree override remove kernel kernel-headers kernel-core kernel-modules kernel-modules-core kernel-modules-extra zram-generator-defaults
 dnf5 copr enable -y bieszczaders/kernel-cachyos-lto
 dnf5 copr enable -y bieszczaders/kernel-cachyos-addons
 rpm-ostree install kernel-cachyos-lto kernel-cachyos-lto-devel-matched
