@@ -1,4 +1,4 @@
-FROM ghcr.io/ublue-os/aurora-dx:stable
+FROM ghcr.io/ublue-os/aurora-dx:latest
 
 
 
