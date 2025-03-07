@@ -1,5 +1,4 @@
-FROM ghcr.io/ublue-os/aurora-dx:stable
-
+FROM ghcr.io/ublue-os/aurora-dx:latest
 
 
 COPY build.sh /tmp/build.sh
