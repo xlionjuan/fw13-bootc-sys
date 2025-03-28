@@ -1,4 +1,4 @@
-FROM ghcr.io/ublue-os/aurora-dx:latest
+FROM ghcr.io/ublue-os/aurora-dx:beta
 
 
 COPY build.sh /tmp/build.sh
