@@ -33,10 +33,8 @@ curl -fsSl https://xlionjuan.github.io/rustdesk-rpm-repo/nightly.repo | tee /etc
 
 curl -fsSl https://xlionjuan.github.io/ntpd-rs-repos/rpm/xlion-ntpd-rs-repo.repo | tee /etc/yum.repos.d/xlion-ntpd-rs-repo.repo
 
-dnf5 copr enable -y pgdev/ghostty
-
 # Install
-dnf5 install -y cloudflare-warp zerotier-one screen tuned waydroid rustdesk ntpd-rs sudo-rs wireshark koji rclone ghostty
+dnf5 install -y cloudflare-warp zerotier-one screen tuned waydroid rustdesk ntpd-rs sudo-rs wireshark koji rclone
 
 # Make chsh back
 #dnf5 reinstall -y util-linux
