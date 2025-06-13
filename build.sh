@@ -38,7 +38,7 @@ sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/terra.repo
 # niri
 
 dnf copr enable -y yalter/niri
-dnf install -y niri
+dnf install -y niri xwayland-satellite
 
 # Install
 dnf5 install -y cloudflare-warp zerotier-one screen tuned waydroid rustdesk ntpd-rs sudo-rs wireshark koji rclone gcm-core
