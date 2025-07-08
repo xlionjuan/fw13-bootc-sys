@@ -62,6 +62,8 @@ jobs:
 
       #- name: Maximize build space
         #uses: ublue-os/remove-unwanted-software@v7
+      - name: df -h
+        run: df -h
 
       # Build metadata
       - name: Image Metadata
@@ -107,6 +109,9 @@ jobs:
           password: ${{ github.token }}
           registry: ghcr.io
 
+      - name: df -h
+        run: df -h
+
       - name: Push Image
         uses: redhat-actions/push-to-registry@5ed88d269cf581ea9ef6dd6806d01562096bee9c # v2.8
         id: push
@@ -114,6 +119,9 @@ jobs:
           tags: ${{ steps.build_image.outputs.tags }}
           extra-args: |
               --compression-format=zstd
+
+      - name: df -h
+        run: df -h
 
       # - name: Push Image
       #   uses: Wandalen/wretry.action@v3.8.0
