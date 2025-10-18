@@ -65,6 +65,15 @@ jobs:
       - name: df -h
         run: df -h
 
+      - name: Mount BTRFS for podman storage
+        uses: ublue-os/container-storage-action@main
+        with:
+          target-dir: ~/.local/share/containers
+        # /var/lib/containers
+
+      - name: df -h
+        run: df -h
+
       # Build metadata
       - name: Image Metadata
         uses: docker/metadata-action@c1e51972afc2121e065aed6d45c65596fe445f3f # v5.8.0
