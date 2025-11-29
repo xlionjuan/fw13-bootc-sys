@@ -33,10 +33,12 @@ curl -fsSl https://xlionjuan.github.io/rustdesk-rpm-repo/nightly.repo | tee /etc
 
 curl -fsSl https://xlionjuan.github.io/ntpd-rs-repos/rpm/xlion-ntpd-rs-repo.repo | tee /etc/yum.repos.d/xlion-ntpd-rs-repo.repo
 
+dnf config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/stable/mullvad.repo
+
 sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/terra.repo
 
 # Install
-dnf5 install -y cloudflare-warp zerotier-one screen tuned waydroid rustdesk ntpd-rs sudo-rs wireshark koji rclone gcm-core
+dnf5 install -y cloudflare-warp zerotier-one screen tuned waydroid rustdesk ntpd-rs sudo-rs wireshark koji rclone gcm-core mullvad-vpn
 
 # Make chsh back
 #dnf5 reinstall -y util-linux
