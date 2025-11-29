@@ -16,7 +16,7 @@ RELEASE="$(rpm -E %fedora)"
 # https://github.com/blue-build/modules/blob/bc0cfd7381680dc8d4c60f551980c517abd7b71f/modules/rpm-ostree/rpm-ostree.sh#L16
 echo "Creating multiple symlinks that didn't created in the image yet"
 # Create symlink for /opt to /var/opt since it is not created in the image yet
-mkdir -p "/var/opt" && ln -s "/var/opt"  "/opt"
+#mkdir -p "/var/opt" && ln -s "/var/opt"  "/opt"
 #mkdir -p "/var/usrlocal" && ln -s "/var/usrlocal" "/usr/local"
 
 dnf5 reinstall -y dnf5
