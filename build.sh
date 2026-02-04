@@ -17,7 +17,10 @@ RELEASE="$(rpm -E %fedora)"
 echo "Creating multiple symlinks that didn't created in the image yet"
 # Create symlink for /opt to /var/opt since it is not created in the image yet
 #mkdir -p "/var/opt" && ln -s "/var/opt"  "/opt"
-mkdir -p /var/opt
+
+rm -rf /opt
+mkdir /opt
+
 #mkdir -p "/var/usrlocal" && ln -s "/var/usrlocal" "/usr/local"
 
 # https://bootc-dev.github.io/bootc/filesystem.html 
