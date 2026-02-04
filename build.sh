@@ -25,6 +25,8 @@ dnf5 reinstall -y dnf5
 # https://github.com/ublue-os/bluefin/issues/1824#issuecomment-2436177630
 dnf5 -y remove tuned-ppd
 
+dnf5 copr enable -y imput/helium
+
 # Add cloudflare-warp.repo to /etc/yum.repos.d/
 curl -fsSl https://pkg.cloudflareclient.com/cloudflare-warp-ascii.repo | tee /etc/yum.repos.d/cloudflare-warp.repo
 
@@ -38,7 +40,7 @@ dnf config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/st
 sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/terra.repo
 
 # Install
-dnf5 install -y cloudflare-warp zerotier-one screen tuned waydroid rustdesk ntpd-rs sudo-rs wireshark koji rclone gcm-core mullvad-vpn
+dnf5 install -y cloudflare-warp zerotier-one screen tuned waydroid rustdesk ntpd-rs sudo-rs wireshark koji rclone gcm-core mullvad-vpn helium-bin
 
 # Make chsh back
 #dnf5 reinstall -y util-linux
