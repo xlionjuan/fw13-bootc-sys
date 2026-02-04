@@ -19,7 +19,7 @@ echo "Creating multiple symlinks that didn't created in the image yet"
 #mkdir -p "/var/opt" && ln -s "/var/opt"  "/opt"
 
 rm -rf /opt
-mkdir /opt
+install -d -m 755 -o root -g root /opt
 
 #mkdir -p "/var/usrlocal" && ln -s "/var/usrlocal" "/usr/local"
 
