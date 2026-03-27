@@ -69,7 +69,7 @@ jobs:
         run: mkdir -p /home/runner/.local/share/containers
 
       - name: Mount BTRFS for Podman storage
-        uses: ublue-os/container-storage-action@main
+        uses: ublue-os/container-storage-action@dc1f4c8f17b672069e921f001132f7cf98a423a6 # main
         with:
           target-dir: /home/runner/.local/share/containers
         # /var/lib/containers
