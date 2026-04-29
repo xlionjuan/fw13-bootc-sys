@@ -47,7 +47,7 @@ dnf config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/st
 sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/terra.repo
 
 # Install
-dnf5 install -y ptyxis cloudflare-warp zerotier-one screen tuned waydroid rustdesk ntpd-rs sudo-rs wireshark koji rclone gcm-core mullvad-vpn helium-bin
+dnf5 install -y ptyxis cloudflare-warp zerotier-one screen tuned waydroid rustdesk ntpd-rs sudo-rs wireshark koji rclone gcm-core mullvad-vpn helium-bin ghostty
 
 # Make chsh back
 #dnf5 reinstall -y util-linux
