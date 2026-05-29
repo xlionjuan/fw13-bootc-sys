@@ -23,7 +23,7 @@ install -d -m 755 -o root -g root /opt
 
 #mkdir -p "/var/usrlocal" && ln -s "/var/usrlocal" "/usr/local"
 
-# https://bootc-dev.github.io/bootc/filesystem.html 
+# https://bootc-dev.github.io/bootc/filesystem.html
 systemctl enable ostree-state-overlay@opt.service
 
 dnf5 reinstall -y dnf5
@@ -47,7 +47,7 @@ dnf config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/st
 sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/terra.repo
 
 # Install
-## Cloudflare SHIT 
+## Cloudflare SHIT
 dnf5 install -y https://pkg.cloudflareclient.com/rpm/x86_64/cloudflare-warp-2026.3.846.0.x86_64.rpm
 # --nobest cloudflare-warp
 dnf5 install -y ptyxis zerotier-one screen tuned waydroid rustdesk ntpd-rs sudo-rs wireshark koji rclone gcm-core mullvad-vpn helium-bin zed
@@ -89,3 +89,6 @@ dnf5 copr enable -y bieszczaders/kernel-cachyos-addons
 #rpm-ostree install kernel-cachyos-lts-lto kernel-cachyos-lts-lto-devel-matched
 #sudo rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos-lto
 dnf5 swap -y zram-generator-defaults cachyos-settings
+
+# DANGEROUS: REMOVE ME
+dnf5 upgrade -y --exclude="*kernel*,*kmod*,akmod-*,*gamescope*,*lutris*,libdex,*cloudflare*,*pipewire*" --disablerepo=terra
