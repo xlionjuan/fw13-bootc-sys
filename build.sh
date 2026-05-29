@@ -93,4 +93,4 @@ dnf5 upgrade -y --exclude="*kernel*,*kmod*,akmod-*,*gamescope*,*lutris*,libdex,*
 
 # DANGEROUS: Replacing kernel
 dnf5 remove -y kernel kernel-modules-akmods kernel-common
-dnf5 distro-sync kernel kernel* --allowerasing
+dnf5 distro-sync -y kernel kernel* --allowerasing
