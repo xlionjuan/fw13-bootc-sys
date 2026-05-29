@@ -4,14 +4,12 @@ set -ouex pipefail
 
 RELEASE="$(rpm -E %fedora)"
 
-
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
 # RPMfusion repos are available by default in ublue main images
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
-
 
 # https://github.com/blue-build/modules/blob/bc0cfd7381680dc8d4c60f551980c517abd7b71f/modules/rpm-ostree/rpm-ostree.sh#L16
 echo "Creating multiple symlinks that didn't created in the image yet"
@@ -92,3 +90,7 @@ dnf5 swap -y zram-generator-defaults cachyos-settings
 
 # DANGEROUS: REMOVE ME
 dnf5 upgrade -y --exclude="*kernel*,*kmod*,akmod-*,*gamescope*,*lutris*,libdex,*cloudflare*,*pipewire*" --disablerepo=terra
+
+# DANGEROUS: Replacing kernel
+dnf5 remove -y kernel kernel-modules-akmods kernel-common
+dnf5 distro-sync kernel kernel* --allowerasing
