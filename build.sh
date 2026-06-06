@@ -89,8 +89,8 @@ dnf5 copr enable -y bieszczaders/kernel-cachyos-addons
 dnf5 swap -y zram-generator-defaults cachyos-settings
 
 # DANGEROUS: REMOVE ME
-dnf5 upgrade -y --exclude="*kernel*,*kmod*,akmod-*,*gamescope*,*lutris*,libdex,*cloudflare*,*pipewire*" --disablerepo=terra
+# dnf5 upgrade -y --exclude="*kernel*,*kmod*,akmod-*,*gamescope*,*lutris*,libdex,*cloudflare*,*pipewire*" --disablerepo=terra
 
 # DANGEROUS: Replacing kernel
-dnf5 remove -y kernel kernel-modules-akmods kernel-common
-dnf5 distro-sync -y kernel kernel* --allowerasing
+# dnf5 remove -y kernel kernel-modules-akmods kernel-common
+# dnf5 distro-sync -y kernel kernel* --allowerasing
