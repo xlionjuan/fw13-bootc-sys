@@ -40,15 +40,15 @@ curl -fsSL https://xlionjuan.github.io/rustdesk-rpm-repo/nightly.repo | tee /etc
 
 curl -fsSL https://xlionjuan.github.io/ntpd-rs-repos/rpm/xlion-ntpd-rs-repo.repo | tee /etc/yum.repos.d/xlion-ntpd-rs-repo.repo
 
-dnf config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/stable/mullvad.repo
+#dnf config-manager addrepo --from-repofile=https://repository.mullvad.net/rpm/stable/mullvad.repo # mullvad-vpn
 
 sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/terra.repo
 
 # Install
 ## Cloudflare SHIT
-dnf5 install -y https://pkg.cloudflareclient.com/rpm/x86_64/cloudflare-warp-2026.3.846.0.x86_64.rpm
+#dnf5 install -y https://pkg.cloudflareclient.com/rpm/x86_64/cloudflare-warp-2026.3.846.0.x86_64.rpm
 # --nobest cloudflare-warp
-dnf5 install -y ptyxis duperemove zerotier-one screen tuned waydroid rustdesk ntpd-rs sudo-rs wireshark koji rclone gcm-core mullvad-vpn helium-bin zed
+dnf5 install -y ptyxis duperemove zerotier-one screen tuned waydroid rustdesk ntpd-rs sudo-rs wireshark koji rclone gcm-core helium-bin zed s-tui cloudflare-warp
 
 dnf copr enable -y scottames/ghostty
 dnf install -y ghostty --disable-repo=terra
@@ -89,7 +89,7 @@ dnf5 copr enable -y bieszczaders/kernel-cachyos-addons
 dnf5 swap -y zram-generator-defaults cachyos-settings
 
 # DANGEROUS: REMOVE ME
-# dnf5 upgrade -y --exclude="*kernel*,*kmod*,akmod-*,*gamescope*,*lutris*,libdex,*cloudflare*,*pipewire*" --disablerepo=terra
+dnf5 upgrade -y --exclude="*kernel*,*kmod*,akmod-*,*gamescope*,*lutris*,libdex,*cloudflare*,*pipewire*" --disablerepo=terra
 
 # DANGEROUS: Replacing kernel
 # dnf5 remove -y kernel kernel-modules-akmods kernel-common
