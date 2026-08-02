@@ -1,4 +1,4 @@
-FROM ghcr.io/ublue-os/bazzite-dx:latest
+FROM ghcr.io/ublue-os/bazzite-dx:latest@sha256:bd100cf596f95d8d29c3f87889ce0aacaa4936762e93dc4a294a03c3e2046708
 
 
 COPY build.sh /tmp/build.sh
