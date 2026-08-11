@@ -52,6 +52,7 @@ dnf5 install -y ptyxis duperemove zerotier-one screen tuned waydroid rustdesk nt
 
 dnf copr enable -y scottames/ghostty
 dnf install -y ghostty --disable-repo=terra
+dnf install -y https://persistent.oaistatic.com/codex-app-prod/linux/rpm/latest/chatgpt.x86_64.rpm
 
 # Make chsh back
 #dnf5 reinstall -y util-linux
