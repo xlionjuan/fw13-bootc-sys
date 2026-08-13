@@ -28,7 +28,7 @@ dnf5 reinstall -y dnf5
 
 # Remove tuned-ppd to prevent GNOME touching tuned
 # https://github.com/ublue-os/bluefin/issues/1824#issuecomment-2436177630
-dnf5 -y remove tuned-ppd
+#dnf5 -y remove tuned-ppd
 
 dnf5 copr enable -y imput/helium
 
@@ -48,7 +48,7 @@ sed -i 's@enabled=0@enabled=1@g' /etc/yum.repos.d/terra.repo
 ## Cloudflare SHIT
 #dnf5 install -y https://pkg.cloudflareclient.com/rpm/x86_64/cloudflare-warp-2026.3.846.0.x86_64.rpm
 # --nobest cloudflare-warp
-dnf5 install -y ptyxis duperemove zerotier-one screen tuned waydroid rustdesk ntpd-rs sudo-rs wireshark koji rclone gcm-core helium-bin zed s-tui cloudflare-warp
+dnf5 install -y ptyxis duperemove zerotier-one screen tuned tuned-ppd waydroid rustdesk ntpd-rs sudo-rs wireshark koji rclone gcm-core helium-bin zed s-tui cloudflare-warp
 
 dnf copr enable -y scottames/ghostty
 dnf install -y ghostty --disable-repo=terra
