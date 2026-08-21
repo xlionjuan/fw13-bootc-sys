@@ -26,6 +26,15 @@ systemctl enable ostree-state-overlay@opt.service
 
 dnf5 reinstall -y dnf5
 
+# Remove bunch of trash
+dnf5 remove -y *rocm* nvidia-gpu-firmware atheros-firmware mt7xxx-firmware amd-gpu-firmware *hyperv-daemons*
+# iBus
+dnf5 remove -y\
+  ibus \
+  ibus-pinyin \
+  ibus-table-chinese-cangjie \
+  ibus-table-chinese-quick \
+
 # Remove tuned-ppd to prevent GNOME touching tuned
 # https://github.com/ublue-os/bluefin/issues/1824#issuecomment-2436177630
 #dnf5 -y remove tuned-ppd
