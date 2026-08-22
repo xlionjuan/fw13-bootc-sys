@@ -161,7 +161,15 @@ jobs:
       - name: df -h
         run: df -h
 
-      - name: Push Image
+      - name: Push
+        uses: redhat-actions/push-to-registry@94ade333c38ecc0e60e94785125d9a52ca423b37 # v3.0.0
+        with:
+          tags: ${{ steps.build-image.outputs.tags }}
+          extra-args: |
+              --compression-format=zstd
+
+      # https://github.com/podman-container-tools/podman/issues/27796
+      - name: Push (2nd)
         uses: redhat-actions/push-to-registry@94ade333c38ecc0e60e94785125d9a52ca423b37 # v3.0.0
         id: push
         with:
