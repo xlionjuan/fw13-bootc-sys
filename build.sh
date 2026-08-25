@@ -24,6 +24,8 @@ install -d -m 755 -o root -g root /opt
 # https://bootc-dev.github.io/bootc/filesystem.html
 systemctl enable ostree-state-overlay@opt.service
 
+cat /etc/dnf/repos.override.d/99-config_manager.repo
+
 dnf5 reinstall -y dnf5
 
 # Remove bunch of trash
