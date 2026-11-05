@@ -3,6 +3,7 @@
 set -ouex pipefail
 
 RELEASE="$(rpm -E %fedora)"
+RELEASE_PREV=$((RELEASE - 1))
 
 ### Install packages
 
@@ -59,7 +60,9 @@ dnf5 config-manager enable terra
 ## Cloudflare SHIT
 #dnf5 install -y https://pkg.cloudflareclient.com/rpm/x86_64/cloudflare-warp-2026.3.846.0.x86_64.rpm
 # --nobest cloudflare-warp
-dnf5 install -y git sequoia-sq ptyxis duperemove zerotier-one screen tuned tuned-ppd waydroid rustdesk ntpd-rs sudo-rs wireshark koji rclone gcm-core helium-bin zed s-tui cloudflare-warp virt-viewer
+dnf5 install -y git sequoia-sq ptyxis duperemove zerotier-one screen tuned tuned-ppd waydroid rustdesk ntpd-rs sudo-rs wireshark koji rclone gcm-core helium-bin zed s-tui virt-viewer
+
+dnf5 install -y cloudflare-warp --releasever=$RELEASE_PREV
 
 dnf copr enable -y scottames/ghostty
 dnf install -y ghostty --disable-repo=terra
