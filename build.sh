@@ -101,7 +101,10 @@ systemctl enable ntpd-rs
 dnf5 copr enable -y bieszczaders/kernel-cachyos-addons
 #rpm-ostree install kernel-cachyos-lts-lto kernel-cachyos-lts-lto-devel-matched
 #sudo rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos-lto
-dnf5 swap -y zram-generator-defaults cachyos-settings
+
+# dnf5 swap -y zram-generator-defaults cachyos-settings
+dnf5 do -y --action=remove zram-generator-defaults systemd-oomd-defaults --action=install cachyos-settings
+
 
 # DANGEROUS: REMOVE ME
 dnf5 upgrade -y --exclude="*kernel*,*kmod*,akmod-*,*gamescope*,*lutris*,libdex,*cloudflare*,*pipewire*" --disablerepo=terra
