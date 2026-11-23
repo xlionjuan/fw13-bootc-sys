@@ -56,7 +56,7 @@ jobs:
           echo "Image: "${image}""
           echo ""
           echo "Using Cosign to verify image..."
-          cosign verify \
+          cosign verify --new-bundle-format=false \
             --key https://raw.githubusercontent.com/ublue-os/bluefin/refs/heads/main/cosign.pub \
             "${image}"
 
