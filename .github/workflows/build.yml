@@ -120,7 +120,7 @@ jobs:
         env:
           SOURCE_IMAGE: ${{ steps.build-image.outputs.image-with-tag }}
           IMAGE_TAGS: ${{ steps.build-image.outputs.tags }}
-          CHUNKAH_IMAGE: quay.io/coreos/chunkah:v0.6.0
+          CHUNKAH_IMAGE: quay.io/coreos/chunkah:v0.7.1
         run: |
           CHUNKAH_OUTPUT_DIR="$(mktemp -d)"
           CHUNKAH_CONFIG_FILE="$(mktemp)"
